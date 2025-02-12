@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ポイ活fun</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css">
+    <link rel="stylesheet" href="styles/main.css">
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg">
+        <div class="container">
+            <a class="navbar-brand" href="#">ポイ活fun</a>
+        </div>
+    </nav>
+
+    <header class="hero">
+        <div class="container">
+            <img src="images/header-image.jpg" alt="ポイ活fun" class="hero-image" data-aos="fade-up">
+        </div>
+    </header>
+
+    <main>
+        <section class="content-section" id="current-campaigns">
+            <div class="container">
+                <h2 class="section-title" data-aos="fade-up">現在のキャンペーン</h2>
+                <div class="campaign-grid">
+                    <!-- キャンペーン情報がここに動的に表示されます -->
+                </div>
+            </div>
+        </section>
+
+        <section class="content-section" id="notion-database">
+            <div class="container">
+                <div id="notion-content" class="notion-content">
+                    <iframe class="notion-iframe"
+                            src="https://thankful-shelf-c84.notion.site/198ff851132980078cdeff52bb4c6278?v=198ff851132980398816000c556ec2b4&pvs=73&embed=true"
+                            title="ポイントサイト紹介"
+                            loading="lazy"
+                            frameborder="0"
+                            width="100%"
+                            height="100%"
+                            allow="accelerometer; ambient-light-sensor; camera; encrypted-media; geolocation; gyroscope; hid; microphone; midi; payment; usb; vr; xr-spatial-tracking"
+                            sandbox="allow-forms allow-scripts allow-same-origin allow-popups allow-popups-to-escape-sandbox"
+                    ></iframe>
+                </div>
+            </div>
+        </section>
+
+        <section class="content-section" id="points-section">
+            <div class="container">
+                <h2 class="section-title" data-aos="fade-up">友達紹介</h2>
+                <div class="referral-grid">
+                    <!-- 友達紹介コンテンツ -->
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2025 ポイ活fun. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+    <script src="scripts/main.js"></script>
+</body>
+</html>
