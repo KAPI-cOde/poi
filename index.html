@@ -53,6 +53,94 @@
             border-radius: 12px;
             background: white;
         }
+
+        /* ポイントサイト一覧表のスタイル */
+        .points-table {
+            width: 100%;
+            background: white;
+            border-radius: 15px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+            margin: 2rem 0;
+        }
+
+        .points-table th,
+        .points-table td {
+            padding: 1rem;
+            border-bottom: 1px solid #eee;
+        }
+
+        .points-table th {
+            background-color: var(--main-color);
+            color: white;
+            font-weight: 600;
+            text-align: left;
+        }
+
+        .points-table tr:last-child td {
+            border-bottom: none;
+        }
+
+        .points-table tr:hover {
+            background-color: #f8f9fa;
+        }
+
+        /* ツールチップのスタイル */
+        .tooltip-trigger {
+            position: relative;
+            display: inline-block;
+            cursor: help;
+            border-bottom: 1px dotted #666;
+        }
+
+        .tooltip-trigger:hover .tooltip-content {
+            visibility: visible;
+            opacity: 1;
+        }
+
+        .tooltip-content {
+            visibility: hidden;
+            position: absolute;
+            bottom: 125%;
+            left: 50%;
+            transform: translateX(-50%);
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 0.5rem 1rem;
+            border-radius: 6px;
+            font-size: 0.9rem;
+            width: max-content;
+            max-width: 300px;
+            opacity: 0;
+            transition: opacity 0.3s;
+            z-index: 1;
+        }
+
+        .tooltip-content::after {
+            content: "";
+            position: absolute;
+            top: 100%;
+            left: 50%;
+            margin-left: -5px;
+            border-width: 5px;
+            border-style: solid;
+            border-color: #333 transparent transparent transparent;
+        }
+
+        /* フッター画像用のスタイル */
+        .footer-image {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 150px;
+            pointer-events: none;
+            background-image: url('images/footer-landscape.png');
+            background-repeat: repeat-x;
+            background-position: bottom;
+            background-size: auto 150px;
+        }
     </style>
 </head>
 <body>
@@ -86,29 +174,55 @@
             </div>
         </section>
 
-        <section class="content-section" id="notion-database">
-            <div class="container">
-                <div id="notion-content" class="notion-content">
-                    <iframe class="notion-iframe"
-                            src="https://thankful-shelf-c84.notion.site/198ff851132980078cdeff52bb4c6278?v=198ff851132980398816000c556ec2b4&pvs=73&embed=true"
-                            title="ポイントサイト紹介"
-                            loading="lazy"
-                            frameborder="0"
-                            width="100%"
-                            height="100%"
-                            allow="accelerometer; ambient-light-sensor; camera; encrypted-media; geolocation; gyroscope; hid; microphone; midi; payment; usb; vr; xr-spatial-tracking"
-                            sandbox="allow-forms allow-scripts allow-same-origin allow-popups allow-popups-to-escape-sandbox"
-                    ></iframe>
-                </div>
-            </div>
-        </section>
-
         <section class="content-section" id="points-section">
             <div class="container">
-                <h2 class="section-title" data-aos="fade-up">友達紹介</h2>
-                <div class="referral-grid">
-                    <!-- 友達紹介コンテンツ -->
-                </div>
+                <h2 class="section-title" data-aos="fade-up">おすすめポイントサイト</h2>
+                <table class="points-table">
+                    <thead>
+                        <tr>
+                            <th>ポイントサイト</th>
+                            <th>特徴・メリット</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>
+                                <a href="#" target="_blank" rel="noopener">モッピー</a>
+                                <span class="tooltip-trigger">
+                                    ⓘ
+                                    <span class="tooltip-content">
+                                        紹介で2,000円相当のポイント獲得可能。紹介者も同額獲得できます。
+                                    </span>
+                                </span>
+                            </td>
+                            <td>・高還元率のショッピング<br>・豊富なアンケート案件<br>・初心者向けの分かりやすい説明</td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <a href="#" target="_blank" rel="noopener">ポイントタウン</a>
+                                <span class="tooltip-trigger">
+                                    ⓘ
+                                    <span class="tooltip-content">
+                                        紹介で1,000円相当のポイント獲得可能。紹介者も特別ボーナスを獲得できます。
+                                    </span>
+                                </span>
+                            </td>
+                            <td>・ゲーム感覚でポイント獲得<br>・毎日のログインボーナス<br>・スマホアプリが使いやすい</td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <a href="#" target="_blank" rel="noopener">ハピタス</a>
+                                <span class="tooltip-trigger">
+                                    ⓘ
+                                    <span class="tooltip-content">
+                                        紹介で500円相当のポイント獲得可能。紹介者は成果報酬の10%を獲得できます。
+                                    </span>
+                                </span>
+                            </td>
+                            <td>・大手ポイントサイト<br>・安定した案件数<br>・ポイント交換先が豊富</td>
+                        </tr>
+                    </tbody>
+                </table>
             </div>
         </section>
     </main>
@@ -118,6 +232,8 @@
             <p>&copy; 2025 ポイ活fun. All rights reserved.</p>
         </div>
     </footer>
+
+    <div class="footer-image"></div>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
